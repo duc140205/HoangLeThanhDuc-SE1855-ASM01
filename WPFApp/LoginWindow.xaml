@@ -1,0 +1,25 @@
+﻿<Window x:Class="HoangLeThanhDucWPF.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoangLeThanhDucWPF"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <TextBlock Text="Login System" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <RadioButton x:Name="rbAdmin" Content="Admin" IsChecked="True" Checked="Role_Checked"/>
+            <RadioButton x:Name="rbCustomer" Content="Customer" Margin="20,0,0,0" Checked="Role_Checked"/>
+        </StackPanel>
+
+        <Label x:Name="lblUser" Content="Username:"/>
+        <TextBox x:Name="txtUser" Margin="0,0,0,10"/>
+
+        <Label x:Name="lblPass" Content="Password:"/>
+        <PasswordBox x:Name="txtPass" Margin="0,0,0,20"/>
+
+        <Button x:Name="btnLogin" Content="Login" Height="30" Click="btnLogin_Click"/>
+    </StackPanel>
+</Window>

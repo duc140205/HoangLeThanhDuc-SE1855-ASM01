@@ -1,0 +1,17 @@
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.csproj.AssemblyReference.cache
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfoInputs.cache
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.AssemblyInfo.cs
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.csproj.CoreCompileInputs.cache
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\Repositories.deps.json
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\Repositories.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\Repositories.pdb
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\BusinessObjects.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\DataAccessLayer.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\BusinessObjects.pdb
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\bin\Debug\net9.0\DataAccessLayer.pdb
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Reposito.787EC4B2.Up2Date
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\refint\Repositories.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.pdb
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\ref\Repositories.dll
