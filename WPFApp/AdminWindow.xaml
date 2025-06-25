@@ -37,7 +37,6 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-
             <TabItem Header="Product Management">
                 <Grid>
                     <Grid.RowDefinitions>
