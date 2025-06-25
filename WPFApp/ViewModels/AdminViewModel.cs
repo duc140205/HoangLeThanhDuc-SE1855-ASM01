@@ -148,7 +148,7 @@ namespace HoangLeThanhDucWPF.ViewModels
 
             // Khởi tạo Delete Commands
             DeleteCustomerCommand = new RelayCommand(ExecuteDeleteCustomer, CanExecuteUpdateOrDelete);
-            DeleteProductCommand = new RelayCommand(ExecuteDeleteProduct, CanExecuteUpdateOrDelete);
+            DeleteProductCommand = new RelayCommand(ExecuteDeleteProduct, CanExecuteUpdateOrDeleteProduct);
 
 
             // Khởi tạo Add và Update Commands

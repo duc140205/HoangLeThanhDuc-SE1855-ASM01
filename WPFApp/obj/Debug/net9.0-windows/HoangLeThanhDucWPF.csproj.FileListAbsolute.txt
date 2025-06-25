@@ -38,3 +38,4 @@ D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\WPFApp\obj\
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\WPFApp\obj\Debug\net9.0-windows\ProductDetailWindow.g.cs
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\WPFApp\obj\Debug\net9.0-windows\CustomerWindow.g.cs
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\WPFApp\obj\Debug\net9.0-windows\CustomerWindow.baml
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\WPFApp\obj\Debug\net9.0-windows\HoangLeThanhDucWPF.sourcelink.json
