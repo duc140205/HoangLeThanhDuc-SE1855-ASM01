@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessObjects;
+using HoangLeThanhDucWPF.ViewModels;
 
 namespace HoangLeThanhDucWPF
 {
@@ -23,8 +24,15 @@ namespace HoangLeThanhDucWPF
         public CustomerWindow(Customer customer)
         {
             InitializeComponent();
-            // Khởi tạo ViewModel với thông tin của customer đã đăng nhập
-            this.DataContext = new ViewModels.CustomerViewModel(customer);
+            var viewModel = new CustomerViewModel(customer);
+            this.DataContext = viewModel;
+
+            // Đăng ký sự kiện RequestClose
+            viewModel.RequestClose += () => {
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
+                this.Close();
+            };
         }
     }
 }

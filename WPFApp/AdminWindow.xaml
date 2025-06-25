@@ -7,130 +7,123 @@
         mc:Ignorable="d"
         Title="Admin Dashboard" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
-        <TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
             <TabItem Header="Customer Management">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5,0,10">
-                        <Label Content="Search by Name:" VerticalAlignment="Center"/>
-                        <TextBox x:Name="txtSearchCustomer" Width="200" Margin="5,0" Text="{Binding SearchCustomerText, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button x:Name="btnSearchCustomer" Content="Search" Width="80" Margin="5,0" Command="{Binding SearchCustomerCommand}"/>
-                        <Button x:Name="btnAddCustomer" Content="Add New" Width="80" Margin="20,0,5,0" Command="{Binding AddCustomerCommand}"/>
-                        <Button x:Name="btnUpdateCustomer" Content="Update" Width="80" Margin="5,0" Command="{Binding UpdateCustomerCommand}"/>
-                        <Button x:Name="btnDeleteCustomer" Content="Delete" Width="80" Margin="5,0" Command="{Binding DeleteCustomerCommand}"/>
-                    </StackPanel>
-
-                    <DataGrid x:Name="dgCustomers" Grid.Row="1" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" 
-                                              IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding CustomerId}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" Width="*"/>
-                            <DataGridTextColumn Header="Contact Name" Binding="{Binding ContactName}" Width="*"/>
-                            <DataGridTextColumn Header="Contact Title" Binding="{Binding ContactTitle}" Width="*"/>
-                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Product Management">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5,0,10">
-                        <Label Content="Search by Name:" VerticalAlignment="Center"/>
-                        <TextBox x:Name="txtSearchProduct" Width="200" Margin="5,0" Text="{Binding SearchProductText, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button x:Name="btnSearchProduct" Content="Search" Width="80" Margin="5,0" Command="{Binding SearchProductCommand}"/>
-                        <Button x:Name="btnAddProduct" Content="Add New" Width="80" Margin="20,0,5,0" Command="{Binding AddProductCommand}"/>
-                        <Button x:Name="btnUpdateProduct" Content="Update" Width="80" Margin="5,0" Command="{Binding UpdateProductCommand}"/>
-                        <Button x:Name="btnDeleteProduct" Content="Delete" Width="80" Margin="5,0" Command="{Binding DeleteProductCommand}"/>
-                    </StackPanel>
-
-                    <DataGrid x:Name="dgProducts" Grid.Row="1" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" 
-                                            IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding ProductId}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="*"/>
-                            <DataGridTextColumn Header="Category ID" Binding="{Binding CategoryId}" Width="*"/>
-                            <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice}" Width="*"/>
-                            <DataGridTextColumn Header="Units In Stock" Binding="{Binding UnitsInStock}" Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Order Management">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <DataGrid Grid.Row="0" Margin="5" ItemsSource="{Binding Orders}"
-                  SelectedItem="{Binding SelectedOrder}"
-                  IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Order ID" Binding="{Binding OrderId}"/>
-                            <DataGridTextColumn Header="Customer ID" Binding="{Binding CustomerId}"/>
-                            <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeId}"/>
-                            <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}" Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-
-                    <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="LightGray"/>
-
-                    <GroupBox Grid.Row="2" Margin="5" Header="Order Details">
-                        <DataGrid ItemsSource="{Binding SelectedOrderDetails}"
-                      IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBox x:Name="txtSearchCustomer" Width="200" Text="{Binding SearchCustomerText, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Button x:Name="btnSearchCustomer" Content="Search" Margin="5,0,0,0" Command="{Binding SearchCustomerCommand}"/>
+                            <Button x:Name="btnAddCustomer" Content="Add New" Margin="20,0,0,0" Command="{Binding AddCustomerCommand}"/>
+                            <Button x:Name="btnUpdateCustomer" Content="Update" Margin="5,0,0,0" Command="{Binding UpdateCustomerCommand}"/>
+                            <Button x:Name="btnDeleteCustomer" Content="Delete" Margin="5,0,0,0" Command="{Binding DeleteCustomerCommand}"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dgCustomers" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5" IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Order ID" Binding="{Binding OrderId}"/>
-                                <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}"/>
-                                <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}"/>
-                                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
-                                <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P}"/>
+                                <DataGridTextColumn Header="ID" Binding="{Binding CustomerId}" Width="Auto"/>
+                                <DataGridTextColumn Header="Company Name" Binding="{Binding CompanyName}" Width="*"/>
+                                <DataGridTextColumn Header="Contact Name" Binding="{Binding ContactName}" Width="*"/>
+                                <DataGridTextColumn Header="Contact Title" Binding="{Binding ContactTitle}" Width="*"/>
+                                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="2*"/>
+                                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
-                    </GroupBox>
+                    </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Reports">
+
+            <TabItem Header="Product Management">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBox x:Name="txtSearchProduct" Width="200" Text="{Binding SearchProductText, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Button x:Name="btnSearchProduct" Content="Search" Margin="5,0,0,0" Command="{Binding SearchProductCommand}"/>
+                            <Button x:Name="btnAddProduct" Content="Add New" Margin="20,0,0,0" Command="{Binding AddProductCommand}"/>
+                            <Button x:Name="btnUpdateProduct" Content="Update" Margin="5,0,0,0" Command="{Binding UpdateProductCommand}"/>
+                            <Button x:Name="btnDeleteProduct" Content="Delete" Margin="5,0,0,0" Command="{Binding DeleteProductCommand}"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dgProducts" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding ProductId}" Width="Auto"/>
+                                <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="*"/>
+                                <DataGridTextColumn Header="Category ID" Binding="{Binding CategoryId}" Width="*"/>
+                                <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice}" Width="*"/>
+                                <DataGridTextColumn Header="Units In Stock" Binding="{Binding UnitsInStock}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Order Management">
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5,0,10">
-                        <Label Content="Start Date:" VerticalAlignment="Center"/>
-                        <DatePicker x:Name="dpStartDate" Width="120" Margin="5,0"
-                        SelectedDate="{Binding ReportStartDate}"/>
-
-                        <Label Content="End Date:" VerticalAlignment="Center" Margin="20,0,0,0"/>
-                        <DatePicker x:Name="dpEndDate" Width="120" Margin="5,0"
-                        SelectedDate="{Binding ReportEndDate}"/>
-
-                        <Button Content="Generate Report" Width="120" Margin="20,0,0,0"
-                    Command="{Binding GenerateReportCommand}"/>
-                    </StackPanel>
-
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding Orders}"
-                  IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid Grid.Row="0"
+                  ItemsSource="{Binding Orders}"
+                  SelectedItem="{Binding SelectedOrder}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                  SelectionMode="Single">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Order ID" Binding="{Binding OrderId}"/>
-                            <DataGridTextColumn Header="Customer ID" Binding="{Binding CustomerId}"/>
-                            <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeId}"/>
-                            <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}" Width="*"/>
+                            <DataGridTextColumn Header="Order ID" Binding="{Binding OrderId}" Width="*"/>
+                            <DataGridTextColumn Header="Customer ID" Binding="{Binding CustomerId}" Width="*"/>
+                            <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeId}" Width="*"/>
+                            <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}" Width="2*"/>
                         </DataGrid.Columns>
                     </DataGrid>
+
+                    <TextBlock Grid.Row="1" Text="Order Details" FontWeight="Bold" Margin="0,10,0,5"/>
+
+                    <DataGrid Grid.Row="2"
+                  ItemsSource="{Binding SelectedOrderDetails}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Width="*"/>
+                            <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}" Width="*"/>
+                            <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
+                            <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Reports">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="Start Date:" VerticalAlignment="Center"/>
+                            <DatePicker x:Name="dpStartDate" Margin="5,0,0,0" SelectedDate="{Binding ReportStartDate}"/>
+                            <TextBlock Text="End Date:" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <DatePicker x:Name="dpEndDate" Margin="5,0,0,0" SelectedDate="{Binding ReportEndDate}"/>
+                            <Button Content="Generate Report" Command="{Binding GenerateReportCommand}" Margin="20,0,0,0"/>
+                        </StackPanel>
+                        <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" Margin="10" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Order ID" Binding="{Binding OrderId}" Width="*"/>
+                                <DataGridTextColumn Header="Customer ID" Binding="{Binding CustomerId}" Width="*"/>
+                                <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeId}" Width="*"/>
+                                <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>
+
+        <Button Grid.Row="1" 
+                Content="Logout" 
+                Command="{Binding LogoutCommand}" 
+                HorizontalAlignment="Right" 
+                Margin="0,10,0,0" 
+                Padding="10,5"/>
     </Grid>
 </Window>

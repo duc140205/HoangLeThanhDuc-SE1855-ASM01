@@ -19,6 +19,8 @@ namespace HoangLeThanhDucWPF.ViewModels
         private readonly IOrderService iorderService;
         private readonly IOrderDetailService iorderDetailService;
 
+        public event Action RequestClose;
+
         // --- Properties for Data Binding ---
         private ObservableCollection<Customer> _customers;
 
@@ -116,7 +118,7 @@ namespace HoangLeThanhDucWPF.ViewModels
 
 
         // --- Commands ---
-        #region Commands cho Product và Customer
+        #region Commands 
         public ICommand DeleteCustomerCommand { get; private set; }
         public ICommand DeleteProductCommand { get; private set; }
 
@@ -129,9 +131,13 @@ namespace HoangLeThanhDucWPF.ViewModels
         public ICommand SearchCustomerCommand { get; private set; }
         public ICommand SearchProductCommand { get; private set; }
 
-        #endregion
+        public ICommand LogoutCommand { get; private set; }
 
         public ICommand GenerateReportCommand { get; private set; }
+
+        #endregion
+
+
 
 
         public AdminViewModel()
@@ -162,6 +168,10 @@ namespace HoangLeThanhDucWPF.ViewModels
 
 
             GenerateReportCommand = new RelayCommand(ExecuteGenerateReport);
+
+
+            // Khởi tạo LogoutCommand
+            LogoutCommand = new RelayCommand(ExecuteLogout);
         }
 
         private void LoadData()
@@ -185,6 +195,13 @@ namespace HoangLeThanhDucWPF.ViewModels
                 // Nếu không có order nào được chọn, làm trống danh sách details
                 SelectedOrderDetails = new ObservableCollection<OrderDetail>();
             }
+        }
+
+
+        private void ExecuteLogout(object? obj)
+        {
+            // Gửi yêu cầu đóng cửa sổ
+            RequestClose?.Invoke();
         }
 
         // --- Các phương thức thực thi Command ---

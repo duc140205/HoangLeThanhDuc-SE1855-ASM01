@@ -19,6 +19,8 @@ namespace HoangLeThanhDucWPF.ViewModels
         private readonly IOrderService iorderService;
         private readonly IOrderDetailService iorderDetailService;
 
+        public event Action RequestClose;
+
         // --- Properties ---
         public Customer CurrentCustomer { get; set; }
         public ObservableCollection<Order> CustomerOrders { get; set; }
@@ -38,6 +40,7 @@ namespace HoangLeThanhDucWPF.ViewModels
 
         // --- Commands ---
         public ICommand SaveProfileCommand { get; private set; }
+        public ICommand LogoutCommand { get; private set; }
 
         public CustomerViewModel(Customer customer)
         {
@@ -54,6 +57,8 @@ namespace HoangLeThanhDucWPF.ViewModels
 
             // Khởi tạo command
             SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
+
+            LogoutCommand = new RelayCommand(ExecuteLogout);
         }
 
         private void LoadOrderHistory()
@@ -78,6 +83,12 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             icustomerService.UpdateCustomer(CurrentCustomer);
             MessageBox.Show("Your profile has been updated successfully!", "Success");
+        }
+
+        private void ExecuteLogout(object? obj) 
+        {
+            // Gửi yêu cầu đóng cửa sổ
+            RequestClose?.Invoke();
         }
     }
 }

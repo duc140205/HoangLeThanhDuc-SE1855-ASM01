@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessObjects;
+using HoangLeThanhDucWPF.ViewModels;
 using Services;
+
 
 namespace HoangLeThanhDucWPF
 {
@@ -21,13 +23,20 @@ namespace HoangLeThanhDucWPF
     /// </summary>
     public partial class AdminWindow : Window
     {
-   
+
 
         public AdminWindow()
         {
             InitializeComponent();
-            // Binding DataContext to the ViewModel
-            this.DataContext = new ViewModels.AdminViewModel();
+            var viewModel = new AdminViewModel();
+            this.DataContext = viewModel;
+
+            // Đăng ký sự kiện RequestClose
+            viewModel.RequestClose += () => {
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
+                this.Close();
+            };
         }
     }
 }
