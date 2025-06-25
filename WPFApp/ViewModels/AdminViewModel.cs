@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using BusinessObjects;
 using Services;
 using System.Windows;
+using HoangLeThanhDucWPF.Commands;
 
 namespace HoangLeThanhDucWPF.ViewModels
 {

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\wpfapp\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|solutionrelative:wpfapp\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\wpfapp\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|solutionrelative:wpfapp\\viewmodels\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\wpfapp\\viewmodels\\adminviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|solutionrelative:wpfapp\\viewmodels\\adminviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,25 +29,51 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerViewModel.cs",
+              "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\ViewModels\\CustomerViewModel.cs",
+              "RelativeDocumentMoniker": "WPFApp\\ViewModels\\CustomerViewModel.cs",
+              "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\ViewModels\\CustomerViewModel.cs",
+              "RelativeToolTip": "WPFApp\\ViewModels\\CustomerViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:24:56.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\Commands\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "WPFApp\\Commands\\RelayCommand.cs",
+              "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\Commands\\RelayCommand.cs",
+              "RelativeToolTip": "WPFApp\\Commands\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:23:53.463Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AdminViewModel.cs",
               "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\ViewModels\\AdminViewModel.cs",
               "RelativeDocumentMoniker": "WPFApp\\ViewModels\\AdminViewModel.cs",
               "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\ViewModels\\AdminViewModel.cs",
               "RelativeToolTip": "WPFApp\\ViewModels\\AdminViewModel.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAmwJYAAABpAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-25T16:14:19.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AdminWindow.xaml",
               "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\AdminWindow.xaml",
               "RelativeDocumentMoniker": "WPFApp\\AdminWindow.xaml",

@@ -8,6 +8,7 @@ using BusinessObjects;
 using Services;
 using System.Windows.Input;
 using System.Windows;
+using HoangLeThanhDucWPF.Commands;
 
 namespace HoangLeThanhDucWPF.ViewModels
 {
