@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\wpfapp\\customerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|solutionrelative:wpfapp\\customerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\wpfapp\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C3DEFF4F-FB64-45ED-9ADD-F160D94D8890}|WPFApp\\HoangLeThanhDucWPF.csproj|solutionrelative:wpfapp\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF9884AF-87EF-45DF-855F-C877D49733EB}|DataAccessLayer\\DataAccessLayer.csproj|d:\\fpt edu\\su25\\prn212\\prn212_assignment\\hoanglethanhduc__se1855_a01\\dataaccesslayer\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF9884AF-87EF-45DF-855F-C877D49733EB}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +37,32 @@
               "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\CustomerWindow.xaml",
               "RelativeToolTip": "WPFApp\\CustomerWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-25T16:45:22.956Z",
+              "WhenOpened": "2025-06-25T17:01:34.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminWindow.xaml",
+              "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\AdminWindow.xaml",
+              "RelativeDocumentMoniker": "WPFApp\\AdminWindow.xaml",
+              "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\WPFApp\\AdminWindow.xaml",
+              "RelativeToolTip": "WPFApp\\AdminWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-25T17:00:43.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDetailDAO.cs",
+              "DocumentMoniker": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\DataAccessLayer\\OrderDetailDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\OrderDetailDAO.cs",
+              "ToolTip": "D:\\FPT Edu\\SU25\\PRN212\\PRN212_Assignment\\HoangLeThanhDuc__SE1855_A01\\DataAccessLayer\\OrderDetailDAO.cs",
+              "RelativeToolTip": "DataAccessLayer\\OrderDetailDAO.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwDoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:55:08.454Z",
               "EditorCaption": ""
             }
           ]

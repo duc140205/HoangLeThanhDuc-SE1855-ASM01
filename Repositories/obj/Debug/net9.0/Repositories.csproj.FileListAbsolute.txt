@@ -15,3 +15,4 @@ D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositorie
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\refint\Repositories.dll
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.pdb
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\ref\Repositories.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Repositories\obj\Debug\net9.0\Repositories.sourcelink.json

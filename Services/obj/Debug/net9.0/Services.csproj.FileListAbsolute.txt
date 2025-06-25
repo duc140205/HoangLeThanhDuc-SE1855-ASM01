@@ -17,3 +17,4 @@ D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Services\ob
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Services\obj\Debug\net9.0\refint\Services.dll
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Services\obj\Debug\net9.0\Services.pdb
 D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Services\obj\Debug\net9.0\ref\Services.dll
+D:\FPT Edu\SU25\PRN212\PRN212_Assignment\HoangLeThanhDuc__SE1855_A01\Services\obj\Debug\net9.0\Services.sourcelink.json

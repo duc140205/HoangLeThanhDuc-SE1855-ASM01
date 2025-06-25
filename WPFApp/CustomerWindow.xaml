@@ -60,7 +60,7 @@
                                 <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}"/>
                                 <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}"/>
                                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
-                                <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P}"/>
+                                <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P1}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>

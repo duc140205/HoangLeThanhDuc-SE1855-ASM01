@@ -90,7 +90,7 @@
                             <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Width="*"/>
                             <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}" Width="*"/>
                             <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
-                            <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P}" Width="*"/>
+                            <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P1}" Width="*"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

@@ -52,7 +52,7 @@ namespace HoangLeThanhDucWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HoangLeThanhDucWPF;V1.0.0.0;component/customerdetailwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HoangLeThanhDucWPF;component/customerdetailwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CustomerDetailWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
