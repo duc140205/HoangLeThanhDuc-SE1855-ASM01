@@ -13,13 +13,13 @@ namespace DataAccessLayer
         {
             new OrderDetail { OrderId = 1, ProductId = 1, Quantity = 2, UnitPrice = 30000000, Discount = 0.0 },
             new OrderDetail { OrderId = 1, ProductId = 2, Quantity = 1, UnitPrice = 40000000, Discount = 0.1 },
-            new OrderDetail { OrderId = 2, ProductId = 1, Quantity = 3, UnitPrice = 90000000, Discount = 0.05 },
-            new OrderDetail { OrderId = 2, ProductId = 3, Quantity = 1, UnitPrice = 500000, Discount = 0.0 },
-            new OrderDetail { OrderId = 3, ProductId = 2, Quantity = 4, UnitPrice = 120000000, Discount = 0.15 },
-            new OrderDetail { OrderId = 3, ProductId = 4, Quantity = 2, UnitPrice = 120000, Discount = 0.0 },
+            new OrderDetail { OrderId = 2, ProductId = 1, Quantity = 3, UnitPrice = 30000000, Discount = 0.05 },
+            new OrderDetail { OrderId = 2, ProductId = 3, Quantity = 1, UnitPrice = 50000, Discount = 0.0 },
+            new OrderDetail { OrderId = 3, ProductId = 2, Quantity = 4, UnitPrice = 40000000, Discount = 0.15 },
+            new OrderDetail { OrderId = 3, ProductId = 4, Quantity = 2, UnitPrice = 30000, Discount = 0.0 },
             new OrderDetail { OrderId = 4, ProductId = 1, Quantity = 1, UnitPrice = 30000000, Discount = 0.0 },
-            new OrderDetail { OrderId = 4, ProductId = 3, Quantity = 2, UnitPrice = 1000000, Discount = 0.1 },
-            new OrderDetail { OrderId = 5, ProductId = 2, Quantity = 3, UnitPrice = 90000000, Discount = 0.05 },
+            new OrderDetail { OrderId = 4, ProductId = 3, Quantity = 2, UnitPrice = 50000, Discount = 0.1 },
+            new OrderDetail { OrderId = 5, ProductId = 2, Quantity = 3, UnitPrice = 40000000, Discount = 0.05 },
             new OrderDetail { OrderId = 5, ProductId = 4, Quantity = 1, UnitPrice = 30000, Discount = 0.0 }
 
         };
