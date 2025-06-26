@@ -5,21 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoangLeThanhDucWPF"
         mc:Ignorable="d"
-        Title="Lucy Sales Management System" Height="450" Width="900" WindowStartupLocation="CenterScreen">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
-        <TextBlock Text="Lucy Sales Management System" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap"/>
+        Title="Lucy Sales Management System" Height="550" Width="900" WindowStartupLocation="CenterScreen"
+        Background="#f5f5f5">
+    
+    <Border Background="White" 
+            CornerRadius="10" 
+            Width="400" 
+            Margin="50"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="3" Opacity="0.3"/>
+        </Border.Effect>
         
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
-            <RadioButton x:Name="rbAdmin" Content="Admin" IsChecked="True" Checked="Role_Checked"/>
-            <RadioButton x:Name="rbCustomer" Content="Customer" Margin="20,0,0,0" Checked="Role_Checked"/>
+        <StackPanel Margin="40" Width="320">
+            <!-- Tiêu đề đơn giản -->
+            <TextBlock Text="Lucy Sales Management System" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,0,0,30" 
+                       TextWrapping="Wrap"
+                       Foreground="#333"/>
+            
+            <!-- Role selection -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                <RadioButton x:Name="rbAdmin" Content="Admin" IsChecked="True" Checked="Role_Checked" 
+                             FontSize="14" Margin="0,0,15,0"/>
+                <RadioButton x:Name="rbCustomer" Content="Customer" Checked="Role_Checked" 
+                             FontSize="14"/>
+            </StackPanel>
+
+            <!-- Username -->
+            <Label x:Name="lblUser" Content="Username:" FontSize="14" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtUser" 
+                     Height="35" 
+                     Padding="10,8" 
+                     FontSize="14" 
+                     Margin="0,0,0,15"
+                     BorderBrush="#ddd"/>
+
+            <!-- Password -->
+            <Label x:Name="lblPass" Content="Password:" FontSize="14" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="txtPass" 
+                         Height="35" 
+                         Padding="10,8" 
+                         FontSize="14" 
+                         Margin="0,0,0,25"
+                         BorderBrush="#ddd"/>
+
+            <!-- Login Button -->
+            <Button x:Name="btnLogin" 
+                    Content="Login" 
+                    Height="40" 
+                    Click="btnLogin_Click"
+                    Background="#007bff"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                            CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#0056b3"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
-
-        <Label x:Name="lblUser" Content="Username:"/>
-        <TextBox x:Name="txtUser" Margin="0,0,0,10"/>
-
-        <Label x:Name="lblPass" Content="Password:"/>
-        <PasswordBox x:Name="txtPass" Margin="0,0,0,20"/>
-
-        <Button x:Name="btnLogin" Content="Login" Height="30" Click="btnLogin_Click"/>
-    </StackPanel>
+    </Border>
 </Window>
