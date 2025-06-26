@@ -52,7 +52,7 @@
                                 <DataGridTextColumn Header="ID" Binding="{Binding ProductId}" Width="Auto"/>
                                 <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="*"/>
                                 <DataGridTextColumn Header="Category ID" Binding="{Binding CategoryId}" Width="*"/>
-                                <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice}" Width="*"/>
+                                <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}" Width="*"/>
                                 <DataGridTextColumn Header="Units In Stock" Binding="{Binding UnitsInStock}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
