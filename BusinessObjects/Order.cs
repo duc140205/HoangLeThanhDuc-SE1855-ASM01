@@ -13,6 +13,9 @@ namespace BusinessObjects
         public int EmployeeId { get; set; }
         public DateTime OrderDate { get; set; }
 
-
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

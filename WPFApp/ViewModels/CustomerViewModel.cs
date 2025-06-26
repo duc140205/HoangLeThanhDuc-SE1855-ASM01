@@ -24,7 +24,20 @@ namespace HoangLeThanhDucWPF.ViewModels
         // --- Properties ---
         public Customer CurrentCustomer { get; set; }
         public ObservableCollection<Order> CustomerOrders { get; set; }
-        public ObservableCollection<OrderDetail> SelectedOrderDetails { get; set; }
+
+        private ObservableCollection<OrderDetail> _selectedOrderDetails;
+        public ObservableCollection<OrderDetail> SelectedOrderDetails
+        {
+            get => _selectedOrderDetails;
+            set { _selectedOrderDetails = value; OnPropertyChanged(); CalculateOrderTotal(); }
+        }
+
+        private double _orderTotal;
+        public double OrderTotal
+        {
+            get => _orderTotal;
+            set { _orderTotal = value; OnPropertyChanged(); }
+        }
 
         private Order? _selectedOrder;
         public Order? SelectedOrder
@@ -75,7 +88,10 @@ namespace HoangLeThanhDucWPF.ViewModels
                 var allDetails = iorderDetailService.GetOrderDetails();
                 var filteredDetails = allDetails.Where(od => od.OrderId == _selectedOrder.OrderId);
                 SelectedOrderDetails = new ObservableCollection<OrderDetail>(filteredDetails);
-                OnPropertyChanged(nameof(SelectedOrderDetails));
+            }
+            else
+            {
+                SelectedOrderDetails = new ObservableCollection<OrderDetail>();
             }
         }
 
@@ -89,6 +105,18 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             // Gửi yêu cầu đóng cửa sổ
             RequestClose?.Invoke();
+        }
+
+        private void CalculateOrderTotal()
+        {
+            if (SelectedOrderDetails != null && SelectedOrderDetails.Any())
+            {
+                OrderTotal = SelectedOrderDetails.Sum(od => od.UnitPrice * od.Quantity * (1 - od.Discount));
+            }
+            else
+            {
+                OrderTotal = 0;
+            }
         }
     }
 }

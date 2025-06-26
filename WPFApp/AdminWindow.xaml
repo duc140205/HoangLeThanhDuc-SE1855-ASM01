@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoangLeThanhDucWPF"
         mc:Ignorable="d"
-        Title="Admin Dashboard" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Lucy Sales Management - Admin Dashboard" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:OrderDetailTotalConverter x:Key="TotalConverter"/>
+    </Window.Resources>
+    
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -63,12 +67,18 @@
             <TabItem Header="Order Management">
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <DataGrid Grid.Row="0"
+                    <!-- Order Management Buttons -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                        <Button Content="Create New Order" Command="{Binding CreateOrderCommand}" Padding="10,5" Background="#4CAF50" Foreground="White"/>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1"
                   ItemsSource="{Binding Orders}"
                   SelectedItem="{Binding SelectedOrder}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
@@ -81,9 +91,9 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <TextBlock Grid.Row="1" Text="Order Details" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <TextBlock Grid.Row="2" Text="Order Details" FontWeight="Bold" Margin="0,10,0,5"/>
 
-                    <DataGrid Grid.Row="2"
+                    <DataGrid Grid.Row="3"
                   ItemsSource="{Binding SelectedOrderDetails}"
                   AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                         <DataGrid.Columns>
@@ -91,8 +101,28 @@
                             <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}" Width="*"/>
                             <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
                             <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P1}" Width="*"/>
+                            <DataGridTextColumn Header="Total" Width="*">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding Converter="{StaticResource TotalConverter}" StringFormat="{}{0:C}">
+                                        <Binding Path="UnitPrice"/>
+                                        <Binding Path="Quantity"/>
+                                        <Binding Path="Discount"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+                    
+                    <!-- Order Total Display -->
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" 
+                               VerticalAlignment="Bottom" Margin="0,10,20,10"
+                               Background="LightGray" Opacity="0.9">
+                        <TextBlock Text="Order Total: " FontWeight="Bold" FontSize="14" 
+                                  VerticalAlignment="Center" Margin="10,5"/>
+                        <TextBlock Text="{Binding OrderTotal, StringFormat=C}" FontWeight="Bold" 
+                                  FontSize="14" Foreground="DarkGreen" 
+                                  VerticalAlignment="Center" Margin="0,5,10,5"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
 

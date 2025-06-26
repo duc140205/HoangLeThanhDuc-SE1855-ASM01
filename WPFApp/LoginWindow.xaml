@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoangLeThanhDucWPF"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
-        <TextBlock Text="Login System" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-
+        Title="Lucy Sales Management System" Height="450" Width="900" WindowStartupLocation="CenterScreen">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+        <TextBlock Text="Lucy Sales Management System" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap"/>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
             <RadioButton x:Name="rbAdmin" Content="Admin" IsChecked="True" Checked="Role_Checked"/>
             <RadioButton x:Name="rbCustomer" Content="Customer" Margin="20,0,0,0" Checked="Role_Checked"/>

@@ -22,7 +22,15 @@ namespace DataAccessLayer
         public static List<Order> GetOrders() => new List<Order>(orders);
         public static Order GetOrderById(int orderId) =>
             orders.FirstOrDefault(o => o.OrderId == orderId);
-        public static void AddOrder(Order order) => orders.Add(order);
+        
+        public static void AddOrder(Order order) 
+        {
+            // Auto-generate ID
+            var maxId = orders.Any() ? orders.Max(o => o.OrderId) : 0;
+            order.OrderId = maxId + 1;
+            orders.Add(order);
+        }
+        
         public static void UpdateOrder(Order order)
         {
             var existingOrder = orders.FirstOrDefault(o => o.OrderId == order.OrderId);

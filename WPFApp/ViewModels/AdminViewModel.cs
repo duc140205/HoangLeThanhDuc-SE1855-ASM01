@@ -49,12 +49,15 @@ namespace HoangLeThanhDucWPF.ViewModels
         public ObservableCollection<OrderDetail> SelectedOrderDetails
         {
             get => _selectedOrderDetails;
-            set { _selectedOrderDetails = value; OnPropertyChanged(); }
+            set { _selectedOrderDetails = value; OnPropertyChanged(); CalculateOrderTotal(); }
         }
 
-
-
-
+        private double _orderTotal;
+        public double OrderTotal
+        {
+            get => _orderTotal;
+            set { _orderTotal = value; OnPropertyChanged(); }
+        }
 
         // --- Search Properties ---
         #region Search Properties
@@ -128,6 +131,8 @@ namespace HoangLeThanhDucWPF.ViewModels
         public ICommand AddProductCommand { get; private set; }
         public ICommand UpdateProductCommand { get; private set; }
 
+        public ICommand CreateOrderCommand { get; private set; }
+
         public ICommand SearchCustomerCommand { get; private set; }
         public ICommand SearchProductCommand { get; private set; }
 
@@ -166,6 +171,8 @@ namespace HoangLeThanhDucWPF.ViewModels
             AddProductCommand = new RelayCommand(ExecuteAddProduct);
             UpdateProductCommand = new RelayCommand(ExecuteUpdateProduct, CanExecuteUpdateOrDeleteProduct);
 
+            // Khởi tạo Order Commands
+            CreateOrderCommand = new RelayCommand(ExecuteCreateOrder);
 
             GenerateReportCommand = new RelayCommand(ExecuteGenerateReport);
 
@@ -187,7 +194,8 @@ namespace HoangLeThanhDucWPF.ViewModels
             {
                 // Lấy tất cả OrderDetail và lọc ra những cái có OrderId trùng khớp
                 var allDetails = iorderDetailService.GetOrderDetails();
-                var filteredDetails = allDetails.Where(od => od.OrderId == SelectedOrder.OrderId);
+                var filteredDetails = allDetails.Where(od => od.OrderId == SelectedOrder.OrderId).ToList();
+                
                 SelectedOrderDetails = new ObservableCollection<OrderDetail>(filteredDetails);
             }
             else
@@ -197,6 +205,17 @@ namespace HoangLeThanhDucWPF.ViewModels
             }
         }
 
+        private void CalculateOrderTotal()
+        {
+            if (SelectedOrderDetails != null && SelectedOrderDetails.Any())
+            {
+                OrderTotal = SelectedOrderDetails.Sum(od => od.UnitPrice * od.Quantity * (1 - od.Discount));
+            }
+            else
+            {
+                OrderTotal = 0;
+            }
+        }
 
         private void ExecuteLogout(object? obj)
         {
@@ -330,6 +349,43 @@ namespace HoangLeThanhDucWPF.ViewModels
                 iproductService.UpdateProduct(vm.Product);
                 LoadData();
                 MessageBox.Show("Product updated successfully.", "Success");
+            }
+        }
+
+        #endregion
+
+        #region Order Command Methods
+
+        private void ExecuteCreateOrder(object? obj)
+        {
+            var newOrder = new Order 
+            { 
+                OrderId = 0, 
+                CustomerId = 0, 
+                EmployeeId = 1, // Default employee ID
+                OrderDate = DateTime.Now 
+            };
+            
+            var vm = new OrderDetailViewModel(newOrder);
+            var detailWindow = new OrderDetailWindow(vm);
+
+            if (detailWindow.ShowDialog() == true)
+            {
+                // Save the order first - the DAO will auto-assign the ID
+                iorderService.AddOrder(vm.Order);
+                
+                // Get the updated order with the new ID
+                var savedOrderId = vm.Order.OrderId;
+                
+                // Save all order details
+                foreach (var detail in vm.OrderDetails)
+                {
+                    detail.OrderId = savedOrderId;
+                    iorderDetailService.AddOrderDetail(detail);
+                }
+
+                LoadData(); // Reload data
+                MessageBox.Show($"Order created successfully with ID: {savedOrderId}", "Success");
             }
         }
 
