@@ -23,7 +23,7 @@ namespace DataAccessLayer
             new OrderDetail { OrderId = 5, ProductId = 4, Quantity = 1, UnitPrice = 30000, Discount = 0.0 }
 
         };
-        // CRUD
+        // CRUD methods
         public static List<OrderDetail> GetOrderDetails() => new List<OrderDetail>(orderDetails);
 
         public static void AddOrderDetail(OrderDetail orderDetail) => orderDetails.Add(orderDetail);
