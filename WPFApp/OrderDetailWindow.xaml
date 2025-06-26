@@ -44,8 +44,13 @@
                           DisplayMemberPath="ContactName"
                           Margin="5"/>
 
-                <Label Grid.Row="0" Grid.Column="4" Content="Employee ID:" Margin="10,0,0,0"/>
-                <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding Order.EmployeeId}" Margin="5"/>
+                <Label Grid.Row="0" Grid.Column="4" Content="Employee:" Margin="10,0,0,0"/>
+                <ComboBox Grid.Row="0" Grid.Column="5" 
+                          ItemsSource="{Binding Employees}"
+                          SelectedValue="{Binding Order.EmployeeId}"
+                          SelectedValuePath="EmployeeId"
+                          DisplayMemberPath="Name"
+                          Margin="5"/>
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Order Date:"/>
                 <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding Order.OrderDate}" Margin="5"/>

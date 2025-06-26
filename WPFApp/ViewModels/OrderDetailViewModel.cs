@@ -14,6 +14,7 @@ namespace HoangLeThanhDucWPF.ViewModels
     {
         private readonly ICustomerService _customerService;
         private readonly IProductService _productService;
+        private readonly IEmployeeService _employeeService;
 
         public string Title { get; set; }
         public Order Order { get; set; }
@@ -37,6 +38,13 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             get => _products;
             set { _products = value; OnPropertyChanged(); }
+        }
+
+        private ObservableCollection<Employee> _employees;
+        public ObservableCollection<Employee> Employees
+        {
+            get => _employees;
+            set { _employees = value; OnPropertyChanged(); }
         }
 
         private OrderDetail _selectedOrderDetail;
@@ -76,6 +84,7 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             _customerService = new CustomerService();
             _productService = new ProductService();
+            _employeeService = new EmployeeService();
 
             Order = order;
             Title = order.OrderId == 0 ? "Create New Order" : "Edit Order";
@@ -95,6 +104,7 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             Customers = new ObservableCollection<Customer>(_customerService.GetCustomers());
             Products = new ObservableCollection<Product>(_productService.GetProducts());
+            Employees = new ObservableCollection<Employee>(_employeeService.GetEmployees());
         }
 
         private bool CanExecuteAddOrderDetail(object parameter)
@@ -161,6 +171,20 @@ namespace HoangLeThanhDucWPF.ViewModels
             if (Order.CustomerId <= 0)
             {
                 MessageBox.Show("Please select a customer.", "Validation Error");
+                return false;
+            }
+
+            if (Order.EmployeeId <= 0)
+            {
+                MessageBox.Show("Please select an employee.", "Validation Error");
+                return false;
+            }
+
+            // Validate that the Employee ID exists
+            var employee = _employeeService.GetEmployeeById(Order.EmployeeId);
+            if (employee == null)
+            {
+                MessageBox.Show($"Employee with ID {Order.EmployeeId} does not exist. Please select a valid employee.", "Validation Error");
                 return false;
             }
 
