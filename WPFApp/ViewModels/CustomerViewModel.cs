@@ -25,6 +25,41 @@ namespace HoangLeThanhDucWPF.ViewModels
         public Customer CurrentCustomer { get; set; }
         public ObservableCollection<Order> CustomerOrders { get; set; }
 
+        // Add separate property for phone input validation
+        private string _phoneInput;
+        public string PhoneInput
+        {
+            get => _phoneInput;
+            set
+            {
+                _phoneInput = value;
+                OnPropertyChanged();
+                ValidatePhoneInput();
+            }
+        }
+
+        private string _phoneValidationMessage;
+        public string PhoneValidationMessage
+        {
+            get => _phoneValidationMessage;
+            set
+            {
+                _phoneValidationMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _isPhoneValid;
+        public bool IsPhoneValid
+        {
+            get => _isPhoneValid;
+            set
+            {
+                _isPhoneValid = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ObservableCollection<OrderDetail> _selectedOrderDetails;
         public ObservableCollection<OrderDetail> SelectedOrderDetails
         {
@@ -59,6 +94,10 @@ namespace HoangLeThanhDucWPF.ViewModels
         {
             // Nhận thông tin customer đã đăng nhập
             CurrentCustomer = customer;
+            
+            // Initialize phone input with current phone
+            _phoneInput = customer.Phone;
+            ValidatePhoneInput();
 
             // Khởi tạo services
             icustomerService = new CustomerService();
@@ -69,9 +108,38 @@ namespace HoangLeThanhDucWPF.ViewModels
             LoadOrderHistory();
 
             // Khởi tạo command
-            SaveProfileCommand = new RelayCommand(ExecuteSaveProfile);
+            SaveProfileCommand = new RelayCommand(ExecuteSaveProfile, CanExecuteSaveProfile);
 
             LogoutCommand = new RelayCommand(ExecuteLogout);
+        }
+
+        private void ValidatePhoneInput()
+        {
+            if (string.IsNullOrWhiteSpace(_phoneInput))
+            {
+                PhoneValidationMessage = "Phone number cannot be empty!";
+                IsPhoneValid = false;
+            }
+            else if (!_phoneInput.All(char.IsDigit))
+            {
+                PhoneValidationMessage = "Phone number must contain only digits!";
+                IsPhoneValid = false;
+            }
+            else if (_phoneInput.Length != 10)
+            {
+                PhoneValidationMessage = "Phone number must be exactly 10 digits!";
+                IsPhoneValid = false;
+            }
+            else
+            {
+                PhoneValidationMessage = string.Empty;
+                IsPhoneValid = true;
+            }
+        }
+
+        private bool CanExecuteSaveProfile(object? obj)
+        {
+            return IsPhoneValid;
         }
 
         private void LoadOrderHistory()
@@ -97,6 +165,10 @@ namespace HoangLeThanhDucWPF.ViewModels
 
         private void ExecuteSaveProfile(object? obj)
         {
+            // Update the customer's phone number
+            CurrentCustomer.Phone = PhoneInput;
+            
+            // Save to database
             icustomerService.UpdateCustomer(CurrentCustomer);
             MessageBox.Show("Your profile has been updated successfully!", "Success");
         }

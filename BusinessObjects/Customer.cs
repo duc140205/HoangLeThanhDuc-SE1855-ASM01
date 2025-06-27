@@ -9,7 +9,7 @@ namespace BusinessObjects
     public partial class Customer
     {
         public Customer(int customerId, string companyName, string contactName, string contactTitle, 
-                         string address, int phone)
+                         string address, string phone)
         {
             CustomerId = customerId;
             CompanyName = companyName;
@@ -24,7 +24,7 @@ namespace BusinessObjects
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
         public string Address { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         public object Clone()
         {

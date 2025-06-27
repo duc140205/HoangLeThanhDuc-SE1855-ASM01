@@ -20,7 +20,10 @@
         <TextBox Text="{Binding Customer.Address, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
 
         <Label Content="Phone"/>
-        <TextBox Text="{Binding Customer.Phone, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,20"/>
+        <TextBox Text="{Binding Customer.Phone, UpdateSourceTrigger=PropertyChanged}" 
+                 MaxLength="10" 
+                 PreviewTextInput="PhoneTextBox_PreviewTextInput" 
+                 Margin="0,0,0,20"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Save" Width="100" IsDefault="True" Click="Save_Click"/>

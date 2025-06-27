@@ -15,7 +15,7 @@ namespace Services
         void UpdateCustomer(Customer customer);
         void DeleteCustomer(int customerId);
         List<Customer> SearchCustomers(string searchTerm);
-        Customer GetCustomerByPhone(int phone);
+        Customer GetCustomerByPhone(string phone);
 
     }
 }

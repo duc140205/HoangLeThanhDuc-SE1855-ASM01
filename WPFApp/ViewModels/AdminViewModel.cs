@@ -294,7 +294,7 @@ namespace HoangLeThanhDucWPF.ViewModels
 
         private void ExecuteAddCustomer(object? obj)
         {
-            var newCustomer = new Customer(0, "", "", "", "", 0); // Tạo customer rỗng
+            var newCustomer = new Customer(0, "", "", "", "", ""); // Tạo customer rỗng
             var vm = new CustomerDetailViewModel(newCustomer);
             var detailWindow = new CustomerDetailWindow(vm);
 

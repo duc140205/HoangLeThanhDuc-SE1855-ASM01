@@ -40,7 +40,7 @@ namespace Repositories
             CustomerDAO.UpdateCustomer(customer);
         }
 
-        public Customer GetCustomerByPhone(int phone)
+        public Customer GetCustomerByPhone(string phone)
         {
             return CustomerDAO.GetCustomerByPhone(phone);
         }

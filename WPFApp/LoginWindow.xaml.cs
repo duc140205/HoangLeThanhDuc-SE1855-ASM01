@@ -48,6 +48,8 @@ namespace HoangLeThanhDucWPF
                 lblUser.Content = "Username:";
                 lblPass.Visibility = Visibility.Visible;
                 txtPass.Visibility = Visibility.Visible;
+                // Admin không cần giới hạn số ký tự
+                txtUser.MaxLength = 0;
             }
             else // rbCustomer được chọn
             {
@@ -55,9 +57,23 @@ namespace HoangLeThanhDucWPF
                 lblUser.Content = "Phone Number:";
                 lblPass.Visibility = Visibility.Collapsed;
                 txtPass.Visibility = Visibility.Collapsed;
+                // Customer chỉ được nhập 10 số
+                txtUser.MaxLength = 10;
             }
         }
 
+        private void txtUser_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Chỉ kiểm tra khi đang ở chế độ Customer login
+            if (rbCustomer.IsChecked == true)
+            {
+                // Chỉ cho phép nhập số
+                if (!char.IsDigit(e.Text, 0))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -80,7 +96,8 @@ namespace HoangLeThanhDucWPF
             }
             else // Đăng nhập Customer
             {
-                if (int.TryParse(txtUser.Text, out int phone))
+                string phone = txtUser.Text.Trim();
+                if (!string.IsNullOrEmpty(phone) && phone.All(char.IsDigit) && phone.Length == 10)
                 {
                     Customer customer = icustomerService.GetCustomerByPhone(phone);
                     if (customer != null)
@@ -98,7 +115,7 @@ namespace HoangLeThanhDucWPF
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid phone number for customer login.");
+                    MessageBox.Show("Please enter a valid 10-digit phone number for customer login.");
                 }
             }
         }

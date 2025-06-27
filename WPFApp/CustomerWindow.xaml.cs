@@ -34,5 +34,14 @@ namespace HoangLeThanhDucWPF
                 this.Close();
             };
         }
+
+        private void PhoneTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Chỉ cho phép nhập số
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

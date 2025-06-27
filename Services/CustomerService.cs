@@ -40,7 +40,7 @@ namespace Services
         {
             icustomerRepository.UpdateCustomer(customer);
         }
-        public Customer GetCustomerByPhone(int phone)
+        public Customer GetCustomerByPhone(string phone)
         {
             return icustomerRepository.GetCustomerByPhone(phone);
         }
