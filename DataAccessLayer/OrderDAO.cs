@@ -20,6 +20,7 @@ namespace DataAccessLayer
 
         // CRUD
         public static List<Order> GetOrders() => new List<Order>(orders);
+
         public static Order GetOrderById(int orderId) =>
             orders.FirstOrDefault(o => o.OrderId == orderId);
         
