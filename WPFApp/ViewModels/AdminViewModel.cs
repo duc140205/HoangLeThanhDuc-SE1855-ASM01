@@ -37,12 +37,20 @@ namespace HoangLeThanhDucWPF.ViewModels
             set { _products = value; OnPropertyChanged(); }
         }
 
-
+        // Orders collection for Order Management tab - always shows all orders
         private ObservableCollection<Order> _orders;
         public ObservableCollection<Order> Orders
         {
             get => _orders;
             set { _orders = value; OnPropertyChanged(); }
+        }
+
+        // Separate collection for Reports tab - shows filtered orders
+        private ObservableCollection<Order> _reportOrders;
+        public ObservableCollection<Order> ReportOrders
+        {
+            get => _reportOrders;
+            set { _reportOrders = value; OnPropertyChanged(); }
         }
 
         private ObservableCollection<OrderDetail> _selectedOrderDetails;
@@ -186,6 +194,9 @@ namespace HoangLeThanhDucWPF.ViewModels
             Customers = new ObservableCollection<Customer>(icustomerService.GetCustomers());
             Products = new ObservableCollection<Product>(iproductService.GetProducts());
             Orders = new ObservableCollection<Order>(iorderService.GetOrders());
+            
+            // Initialize ReportOrders with all orders initially
+            ReportOrders = new ObservableCollection<Order>(iorderService.GetOrders());
         }
 
         private void LoadSelectedOrderDetails()
@@ -404,8 +415,8 @@ namespace HoangLeThanhDucWPF.ViewModels
             // Gọi service để lấy dữ liệu đã lọc và sắp xếp
             var reportData = iorderService.GetOrdersByPeriod(ReportStartDate, ReportEndDate);
 
-            // Cập nhật lại danh sách Orders để hiển thị trên DataGrid
-            Orders = new ObservableCollection<Order>(reportData);
+            // Update ONLY ReportOrders collection, NOT Orders collection
+            ReportOrders = new ObservableCollection<Order>(reportData);
 
             MessageBox.Show($"Report generated successfully. Found {reportData.Count} orders.", "Success");
         }
